@@ -1,0 +1,56 @@
+/* Существующие стили остаются, но добавляем новые */
+
+/* Делаем базовые элементы адаптивными */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Чтобы хуйня не вылезала за экран */
+}
+
+.container, .content, .block {
+    max-width: 100%;
+    box-sizing: border-box; /* Чтобы паддинги не ломали ширину */
+}
+
+/* Медиазапрос для телефонов (экран меньше 768px) */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .content {
+        width: 100% !important; /* Перебиваем инлайн стили если есть */
+        margin: 0 !important;
+    }
+    
+    /* Делаем текст читаемым на маленьком экране */
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    /* Убираем фиксированные размеры */
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Кнопки и инпуты делаем удобными для тапа */
+    button, input {
+        min-height: 44px; /* Минимальный размер для касания */
+        font-size: 16px; /* Чтобы зуум не включался в iOS */
+    }
+}
+
+/* Для совсем мелких экранов */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    
+    .container {
+        padding: 5px;
+    }
+}
